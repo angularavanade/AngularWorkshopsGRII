@@ -1,0 +1,11 @@
+<h1>Games List</h1>
+<div>Search:</div>
+<input type="search" (keyup)="search($event.target.value)">
+<br>
+<br>
+<app-games-filter></app-games-filter>
+<ul>
+  <li *ngFor="let game of filteredGamesList">
+    <app-game [game]="game"></app-game>
+  </li>                       
+</ul>
