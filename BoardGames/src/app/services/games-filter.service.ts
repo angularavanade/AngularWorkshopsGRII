@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { GamesService } from './games.service';
 import { Game } from '../game';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,8 @@ export class GameFilterService {
 
   gamesList: Game[];
   filteredGamesList: Game[];
-
+  onFilterChange = new Subject();
+  private filter: any;
 
   constructor(private gamesService: GamesService) { 
 
@@ -25,8 +26,14 @@ export class GameFilterService {
     console.log(phrase);
   }
 
-  getFilteredGames(): Observable <Game[]> {
-    return this.filteredGamesList
+  getFilteredGames(games: Game[]): Game[] {
+    return this.filteredGamesList;
   }
+
+  setFilter(filter: any) {
+    this.filter = filter;
+    this.onFilterChange.next();  
+  }
+
 
 }

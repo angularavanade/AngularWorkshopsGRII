@@ -14,13 +14,17 @@ export class GamesListComponent implements OnInit {
   public gamesList: Game[];
   public filteredGamesList: Game[];
 
-  constructor(private gamesFilterService: GameFilterService) { }
+  constructor(private gamesService: GamesService, private gameFilterService: GameFilterService) { }
 
   ngOnInit() {
-  this.gamesFilterService.getGames()
-    .subscribe(
-      (gamesList: Game[]) => this.filteredGamesList = this.gamesList = gamesList
-    );
+    this.gamesService.getGames()
+      .subscribe(
+        (gamesList: Game[]) => this.filteredGamesList = this.gamesList = gamesList
+      );
+    this.gameFilterService.onFilterChange
+      .subscribe(
+        () => this.filteredGamesList = this.gameFilterService.getFilteredGames(this.gamesList)
+      )
   }
 
   // search(phrase:string) {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { GameFilterService } from '../services/games-filter.service';
 
 @Component({
   selector: 'app-games-filter',
@@ -18,8 +19,14 @@ export class GamesFilterComponent implements OnInit {
     year: new FormControl('')
   });
 
-  constructor() { }
+  constructor(private filterGamesService: GameFilterService) { }
 
   ngOnInit() {
   }
+
+  onSubmit(){
+    this.filterGamesService.setFilter(this.gamesForms.value);
+  }
+
+
 }

@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Game } from '../game';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GamesService {
   
-  apiUrl = 'https://webrental20181129012527.azurewebsites.net/api';
+  apiUrl = 'http://webrental.azurewebsites.net/api';
   constructor(private httpClient: HttpClient) { }
 
-  getGames() {
+  getGames(): Observable<Object> {
     return this.httpClient.get(this.apiUrl + '/boardgames');
   }
 
