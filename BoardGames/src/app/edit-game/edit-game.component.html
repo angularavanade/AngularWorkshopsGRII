@@ -1,0 +1,57 @@
+<div>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="item">
+      <label for="">artist:</label>
+      <input type="text" formControlName = "artist">
+    </div>
+    <div class="item">
+      <label for="">designer</label>
+      <input type="text" formControlName = "designer">
+    </div>
+    <div class="item">
+      <label for="">feePerDay</label>
+      <input type="number" formControlName = "feePerDay">
+    </div>
+    <div class="item">
+      <label for="">imageUrl</label>
+      <input type="text" formControlName = "imageUrl">
+    </div>
+    <div class="item">
+      <label for="">name</label>
+      <input type="text" formControlName = "name">
+    </div>
+    <div class="item">
+      <label for="">minAge</label>
+      <input type="number" formControlName = "minAge">
+    </div>
+    <div class="item">
+      <label for="">minNumberOfPlayers</label>
+      <input type="number" formControlName = "minNumberOfPlayers">
+    </div>
+    <div class="item">
+      <label for="">maxNumberOfPlayers</label>
+      <input type="number" formControlName = "maxNumberOfPlayers">
+    </div>
+    <div class="item">
+      <label for="">minPlayingTime</label>
+      <input type="number" formControlName = "minPlayingTime">
+    </div>
+    <div class="item">
+      <label for="">maxPlayingTime</label>
+      <input type="number" formControlName = "maxPlayingTime">
+    </div>
+    <div class="item">
+      <label for="">rate</label>
+      <input type="number" formControlName = "rate">
+    </div>
+    <div class="item">
+      <label for="">year</label>
+      <input type="number" formControlName = "year">
+    </div>
+    <div class="item">
+      <label for="">publisher</label>
+      <input type="text" formControlName = "publisher">
+    </div>
+    <button type="submit">SUBMIT</button>
+  </form>
+</div>

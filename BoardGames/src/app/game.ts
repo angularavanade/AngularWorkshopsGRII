@@ -3,6 +3,7 @@ import { IGame } from "./igame";
 export class Game implements IGame {
     artist: string;
     designer: string;
+    feePerDay: number;
     id: string;
     imageUrl: string;
     maxNumberOfPlayers: number;

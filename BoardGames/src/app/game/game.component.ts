@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Game } from '../game';
 
 @Component({
@@ -8,10 +8,16 @@ import { Game } from '../game';
 })
 export class GameComponent implements OnInit {
 
+  @Output() edit: EventEmitter<any> = new EventEmitter();
+
   @Input() game: Game;
   constructor() { }
   
   ngOnInit() {
+  }
+
+  editGame() {
+    this.edit.emit(this.game);
   }
 
 }

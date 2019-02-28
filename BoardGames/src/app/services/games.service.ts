@@ -15,6 +15,10 @@ export class GamesService {
     return this.httpClient.get(this.apiUrl + '/boardGames');
   }
 
+  editGame(game: Game): Observable<any> {
+    return this.httpClient.put(this.apiUrl + '/boardGames', game);                                                                                     
+  }
+
 
 
 }

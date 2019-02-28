@@ -7,6 +7,7 @@ import { GameComponent } from './game/game.component';
 import { GamesFilterComponent } from './games-filter/games-filter.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { EditGameComponent } from './edit-game/edit-game.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { LoginComponent } from './login/login.component';
     GamesListComponent,
     GameComponent,
     GamesFilterComponent,
-    LoginComponent
+    LoginComponent,
+    EditGameComponent
   ],
   imports: [
     BrowserModule,

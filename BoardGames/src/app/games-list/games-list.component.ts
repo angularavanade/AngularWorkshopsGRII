@@ -13,6 +13,8 @@ export class GamesListComponent implements OnInit {
 
   public gamesList: Game[];
   public filteredGamesList: Game[];
+  public isGameEdit = false;
+  public editedGame: Game;
 
   constructor(private gamesService: GamesService, private gameFilterService: GameFilterService) { }
 
@@ -31,5 +33,11 @@ export class GamesListComponent implements OnInit {
   //   this.filteredGamesList = this.gamesList.filter(x => x.name.toLowerCase().includes(phrase.toLowerCase()));
   //   console.log(phrase);
   // }
-
+  onEdit(game){
+    this.isGameEdit = true;
+    this.editedGame = game;
+  }
+  kokos() {
+    this.isGameEdit = false;
+  }
 }
