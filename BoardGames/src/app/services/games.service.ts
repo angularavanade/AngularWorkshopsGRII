@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
 })
 export class GamesService {
   
-  apiUrl = 'http://webrental.azurewebsites.net/api';
+  apiUrl = 'https://web-rental.azurewebsites.net/api';
   constructor(private httpClient: HttpClient) { }
 
   getGames(): Observable<Object> {
-    return this.httpClient.get(this.apiUrl + '/boardgames');
+    return this.httpClient.get(this.apiUrl + '/boardGames');
   }
 
 

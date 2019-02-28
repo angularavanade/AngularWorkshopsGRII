@@ -7,7 +7,7 @@ import { Observable, of, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  apiUrl = 'http://webrental.azurewebsites.net/api/login';
+  apiUrl = 'https://web-rental.azurewebsites.net/api/login';
   httpOptions = { headers: new HttpHeaders({ 'contentType': 'application/json' }) };
   constructor(private http: HttpClient) { }
 
