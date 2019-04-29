@@ -37,7 +37,8 @@ export class GamesListComponent implements OnInit {
     this.isGameEdit = true;
     this.editedGame = game;
   }
-  kokos() {
+  onRefreshGames() {
     this.isGameEdit = false;
+    
   }
 }

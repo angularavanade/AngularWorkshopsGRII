@@ -7,7 +7,6 @@
 <ul>
   <li *ngFor="let game of filteredGamesList">
     <app-game [game]="game" (edit)="onEdit(game)"></app-game>
-  </li>                       
+  </li>
 </ul>
-<app-edit-game *ngIf="isGameEdit" [editedGame]="editedGame" (refreshGames)="kokos()"></app-edit-game>
-
+<app-edit-game *ngIf="isGameEdit" [editedGame]="editedGame" (refreshGames)="onRefreshGames(refreshedGame)"></app-edit-game>

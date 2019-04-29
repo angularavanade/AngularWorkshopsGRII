@@ -38,14 +38,23 @@ export class EditGameComponent implements OnInit {
 
   onSubmit() {
     this.newGame = this.editForm.value;
-    if (this.editedGame.id) {
-      this.newGame.id = this.editedGame.id;
-    }
-    this.gamesService.editGame(this.newGame).subscribe(
-      () => this.refreshGames.emit(null)
-    );
 
+    if (this.editedGame && this.objectEquality(this.newGame, this.editedGame)) {
+      if (this.editedGame.id) {
+        this.newGame.id = this.editedGame.id;
+      }
+      this.gamesService.editGame(this.newGame).subscribe();
+      this.refreshGames.emit(this.newGame);
+    }
   }
 
+  objectEquality(object1: Object, object2: Object) {
+    for (let i in object1) {
+      if (object1[i] !== object2[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
 
 }
